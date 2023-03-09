@@ -16,7 +16,7 @@ spec:
         app: spring-demo
     spec:
       containers:
-        - name: flask
+        - name: spring-demo
           image: ${IMAGE}
           ports:
             - name: service-port
