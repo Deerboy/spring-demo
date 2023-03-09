@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-demo
+  namespace: ops
+  labels:
+    app: spring-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: spring-demo
+  template:
+    metadata:
+      labels:
+        app: spring-demo
+    spec:
+      containers:
+        - name: flask
+          image: ${IMAGE}
+          ports:
+            - name: service-port
+              containerPort: 8001
